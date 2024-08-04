@@ -7,17 +7,17 @@ const getAuthConfig = () => {
 };
 
 export const fetchTasks = createAsyncThunk('tasks/fetchTasks', async () => {
-  const response = await axios.get('http://localhost:5000/tasks', getAuthConfig());
+  const response = await axios.get('https://mindlink-taskbackend.onrender.com/tasks', getAuthConfig());
   return response.data;
 });
 
 export const addTask = createAsyncThunk('tasks/addTask', async (task) => {
-  const response = await axios.post('http://localhost:5000/tasks', task, getAuthConfig());
+  const response = await axios.post('https://mindlink-taskbackend.onrender.com/tasks', task, getAuthConfig());
   return response.data;
 });
 
 export const updateTask = createAsyncThunk('tasks/updateTask', async ({ id, stage }) => {
-  const response = await axios.put(`http://localhost:5000/tasks/${id}`, { stage }, getAuthConfig());
+  const response = await axios.put(`https://mindlink-taskbackend.onrender.com/tasks/${id}`, { stage }, getAuthConfig());
   return response.data;
 });
 

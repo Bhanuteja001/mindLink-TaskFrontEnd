@@ -7,7 +7,6 @@ import { toast, ToastContainer } from 'react-toastify';
 const Signup = ({ setIsAuthenticated, setloading }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -27,7 +26,6 @@ const Signup = ({ setIsAuthenticated, setloading }) => {
     }
       
     } catch (err) {
-      setError('Signup failed');
       toast.error("Signup Failed" , {autoClose:1000})
       setloading(false)
     }
@@ -37,7 +35,6 @@ const Signup = ({ setIsAuthenticated, setloading }) => {
     <div className="container vh-100 ">
       <form onSubmit={handleSubmit} className='my-3 mt-5 p-5 mx-auto'>
         <h2 className='my-3'>Signup</h2>
-        {error && <p>{error}</p>}
         <div className='mb-3'>
          
         <label htmlFor="exampleInputEmail1" className="form-label">Email Address</label>

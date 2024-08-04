@@ -7,7 +7,6 @@ import { ToastContainer, toast } from 'react-toastify';
 const Login = ({ setIsAuthenticated , setloading}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -29,9 +28,7 @@ const Login = ({ setIsAuthenticated , setloading}) => {
       
     } catch (err) {
         setloading(false)
-      setError('Invalid credentials');
-
-      toast.error("Invalid Credentials" , {autoClose:1000})
+        toast.error("Invalid Credentials" , {autoClose:1000})
     }
   };
 
@@ -39,7 +36,6 @@ const Login = ({ setIsAuthenticated , setloading}) => {
     <div className="container vh-100">
       <form onSubmit={handleSubmit} className='mt-5 p-5 rounded-3 mx-auto'>
         <h2>Login</h2>
-        {error && <p>{error}</p>}
         <div className="my-3">
           <label htmlFor="exampleInputEmail1" className="form-label">Email Address</label>
           <input

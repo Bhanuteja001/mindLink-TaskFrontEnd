@@ -1,0 +1,11 @@
+body{
+    background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(57, 57, 57) 90.2%);
+    width: 97vw;
+    color: white;
+
+}
+
+
+.bg-warning{
+color: #000 !important;
+}
